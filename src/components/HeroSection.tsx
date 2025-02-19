@@ -1,7 +1,13 @@
 "use client"
-import React from 'react';
-import Lottie from 'lottie-react';
+import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
 import heroAnimation from "../animations/herosection.json";
+
+// Dynamically import Lottie with SSR disabled
+const Lottie = dynamic(() => import('lottie-react'), {
+  ssr: false,
+  loading: () => <div className='w-full h-full bg-primary'></div>
+});
 
 const HeroSection: React.FC = () => {
   return (
@@ -32,12 +38,13 @@ const HeroSection: React.FC = () => {
 
         <div className='h-[40%] laptop:h-[80%] w-[80%] laptop:w-[85%] absolute translate-x-1/2 right-[50%] laptop:right-[45%] top-0 laptop:top-auto order-1 laptop:order-2'>
           <div className='absolute w-full h-full z-[200]'>
-            <Lottie 
-              animationData={heroAnimation}
-              loop={true}
-              className='w-full h-full scale-150 laptop:scale-200 z-[200]'
-            />
-            {/* <div className='w-[85%] h-[85%] absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-primary blur-2xl z-[10]'></div> */}
+            <Suspense fallback={<div className='w-full h-full bg-primary'></div>}>
+              <Lottie 
+                animationData={heroAnimation}
+                loop={true}
+                className='w-full h-full scale-150 laptop:scale-200 z-[200]'
+              />
+            </Suspense>
           </div>
         </div>
 
