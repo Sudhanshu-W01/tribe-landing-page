@@ -31,7 +31,6 @@ const GridCards = () => {
       {/* Card 1 */}
       <motion.div 
         variants={item}
-        whileHover={{ scale: 0.95 }}
         className="col-span-1 laptop:col-span-4 flex flex-col laptop:flex-row justify-between rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
         style={{
           background: "radial-gradient(circle, rgba(87,92,82,0.57) 0%, rgba(32,34,28,0.54) 57%)"
@@ -49,7 +48,6 @@ const GridCards = () => {
       {/* Card 2 */}
       <motion.div 
         variants={item}
-        whileHover={{ scale: 0.95 }}
         className="col-span-1 laptop:col-span-3 flex flex-col justify-between rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
         style={{
           background: "radial-gradient(circle, rgba(87,92,82,0.57) 0%, rgba(32,34,28,0.54) 57%)"
@@ -69,7 +67,6 @@ const GridCards = () => {
       {/* Card 3 */}
       <motion.div 
         variants={item}
-        whileHover={{ scale: 0.95 }}
         className="col-span-1 laptop:col-span-3 rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
       >
         <div className='flex flex-row justify-center items-center w-full h-[50%]'>
@@ -86,7 +83,6 @@ const GridCards = () => {
       {/* Card 4 */}
       <motion.div 
         variants={item}
-        whileHover={{ scale: 0.95 }}
         className="col-span-1 laptop:col-span-4 flex flex-row justify-end rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
         style={{
           background: "radial-gradient(circle, rgba(87,92,82,0.57) 0%, rgba(32,34,28,0.54) 57%)"
@@ -107,7 +103,6 @@ const GridCards = () => {
       {/* Card 5 */}
       <motion.div 
         variants={item}
-        whileHover={{ scale: 0.95 }}
         className="col-span-1 laptop:col-span-4 flex flex-row justify-between rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
         style={{
           background: "radial-gradient(circle, rgba(87,92,82,0.57) 0%, rgba(32,34,28,0.54) 57%)"
@@ -125,7 +120,6 @@ const GridCards = () => {
       {/* Card 6 */}
       <motion.div 
         variants={item}
-        whileHover={{ scale: 0.95 }}
         className="col-span-1 laptop:col-span-3 rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
       >
         <div className='flex flex-row justify-center items-start w-full h-[50%]'>

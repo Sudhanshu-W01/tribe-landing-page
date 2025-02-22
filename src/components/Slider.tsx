@@ -58,37 +58,57 @@ function Slider() {
             {/* Three sets of images for smoother infinite loop */}
             {[...Array(3)].map((_, setIndex) => (
               <div key={`set-${setIndex}`} className="flex flex-row gap-8 laptop:gap-16">
-                {partnerLogos.map((logo, index) => {
-                  let width = 150;
-                  let height = 150;
-
-                  if (index === 1) {
-                    width = 200;
-                    height = 160;
-                  } else if (index === 2) {
-                    width = 110;
-                    height = 110;
-                  } else if (index === 3) {
-                    width = 150;
-                    height = 150;
-                  }
-
-                  return (
-                    <div 
-                      key={`${setIndex}-${index}`} 
-                      className={`w-[${width}px] h-[${height}px] relative flex-shrink-0 flex items-center justify-center`}
-                    >
-                      <Image
-                        src={logo}
-                        alt={`partner ${index + 1}`}
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 1024px) 60px, 100px"
-                        style={{ objectFit: 'contain', maxHeight: '100%' }}
-                      />
-                    </div>
-                  );
-                })}
+                {partnerLogos.map((logo, index) => (
+                  index === 1 ? <div 
+                  key={`${setIndex}-${index}`} 
+                  className="w-[200px] h-[160px] relative flex-shrink-0 flex items-center justify-center"
+                >
+                  <Image
+                    src={logo}
+                    alt={`partner ${index + 1}`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 60px, 100px"
+                    style={{ objectFit: 'contain', maxHeight: '100%' }}
+                  />
+                </div> : index === 2 ? <div 
+                    key={`${setIndex}-${index}`} 
+                    className="w-[110px] h-full relative flex-shrink-0 flex items-center justify-center"
+                  >
+                    <Image
+                      src={logo}
+                      alt={`partner ${index + 1}`}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 60px, 100px"
+                      style={{ objectFit: 'contain', maxHeight: '100%' }}
+                    />
+                  </div> : index === 3 ? <div 
+                    key={`${setIndex}-${index}`} 
+                    className="w-[150px] h-full relative bottom-1 flex-shrink-0 flex items-center justify-center"
+                  >
+                    <Image
+                      src={logo}
+                      alt={`partner ${index + 1}`}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 60px, 100px"
+                      style={{ objectFit: 'contain', maxHeight: '100%' }}
+                    />
+                  </div> : <div 
+                    key={`${setIndex}-${index}`} 
+                    className="w-[150px] h-full relative flex-shrink-0 flex items-center justify-center"
+                  >
+                    <Image
+                      src={logo}
+                      alt={`partner ${index + 1}`}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 60px, 100px"
+                      style={{ objectFit: 'contain', maxHeight: '100%' }}
+                    />
+                  </div>
+                ))}
               </div>
             ))}
           </motion.div>
