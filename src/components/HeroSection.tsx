@@ -23,7 +23,7 @@ const HeroSection: React.FC = () => {
         
         <div className='relative z-[120] h-[80%] w-[100%] flex flex-col laptop:flex-row justify-between px-4 laptop:px-0'>
           <div className='w-full laptop:w-[50%] h-fit laptop:h-full flex flex-row justify-start py-4 order-2 laptop:order-1'>
-            <p className='text-white text-3xl laptop:text-5xl font-nohemi400 text-center laptop:text-left'>
+            <p className='text-white text-4xl laptop:text-4xl font-nohemi400 text-center laptop:text-left'>
               Unite Your Blockchain World—Developers, Holders, Projects, 
               All Together.
             </p>
@@ -37,6 +37,9 @@ const HeroSection: React.FC = () => {
         </div>
 
         <div className='h-[40%] laptop:h-[80%] w-[80%] laptop:w-[85%] absolute translate-x-1/2 right-[50%] laptop:right-[45%] top-0 laptop:top-auto order-1 laptop:order-2'>
+          {/* Black Backdrop */}
+          <div className='absolute w-[400px] h-[500px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-[#0E0F0C] blur-lg rounded-full z-[150]' />
+
           <div className='absolute w-full h-full z-[200]'>
             <Suspense fallback={<div className='w-full h-full bg-primary'></div>}>
               <Lottie 

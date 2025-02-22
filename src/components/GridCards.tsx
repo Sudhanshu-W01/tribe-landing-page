@@ -92,8 +92,8 @@ const GridCards = () => {
           background: "radial-gradient(circle, rgba(87,92,82,0.57) 0%, rgba(32,34,28,0.54) 57%)"
         }}
       >
-        <div className='absolute top-0 left-0 w-[50%] h-[70%]'>
-          <Image src="/assets/card4.png" alt="icon" className='w-[50%] h-auto z-[100]' fill/>
+        <div className='absolute top-0 left-0 w-[50%] h-[70%] aspect-square'>
+          <Image src="/assets/card4.png" alt="icon" className='w-full h-auto z-[100]' fill/>
           <div className='absolute top-[-10%] left-[-10%] w-[80%] bg-white blur-xl z-[10] rounded-full h-full'>
 
           </div>
