@@ -22,25 +22,25 @@ const HeroSection: React.FC = () => {
         />
         
         <div className='relative z-[120] h-[80%] w-[100%] flex flex-col laptop:flex-row justify-between px-4 laptop:px-0'>
-          <div className='w-full laptop:w-[50%] h-fit laptop:h-full flex flex-row justify-start py-4 order-2 laptop:order-1'>
-            <p className='text-white text-4xl laptop:text-4xl font-nohemi400 text-center laptop:text-left'>
+          <div className='w-full laptop:w-[50%] h-fit laptop:h-full flex flex-row justify-start px-8 py-4 order-2 laptop:order-1'>
+            <p className='text-white text-3xl laptop:text-6xl font-nohemi400 text-center laptop:text-left'>
               Unite Your Blockchain World—Developers, Holders, Projects, 
               All Together.
             </p>
           </div>
           
-          <div className='w-full laptop:w-[30%] h-fit laptop:h-[80%] flex flex-row justify-start items-end order-3'>
-            <p className='text-white text-lg laptop:text-xl font-nohemi200 text-center laptop:text-start w-full laptop:w-[65%]'>
+          <div className='w-full laptop:w-[30%] h-fit laptop:h-[80%] flex flex-row justify-center items-end order-3'>
+            <p className='text-white text-lg laptop:text-xl font-nohemi200 text-center laptop:text-start w-full laptop:w-[70%]'>
               Unite developers, token holders, and projects under one seamless community platform
             </p>
           </div>
         </div>
 
-        <div className='h-[40%] laptop:h-[80%] w-[80%] laptop:w-[85%] absolute translate-x-1/2 right-[50%] laptop:right-[45%] top-0 laptop:top-auto order-1 laptop:order-2'>
+        <div className='h-[40%] laptop:h-[80%] w-[70%] laptop:w-[75%] absolute translate-x-1/2 right-[50%] laptop:right-[40%] top-0 laptop:top-auto order-1 laptop:order-2'>
           {/* Black Backdrop */}
-          <div className='absolute w-[400px] h-[500px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-[#0E0F0C] blur-lg rounded-full z-[150]' />
+          <div className='absolute w-[500px] h-[600px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-[#0E0F0C] blur-lg rounded-full z-[150]' />
 
-          <div className='absolute w-full h-full z-[200]'>
+          <div className='absolute w-[600px] h-[600px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-[200]'>
             <Suspense fallback={<div className='w-full h-full bg-primary'></div>}>
               <Lottie 
                 animationData={heroAnimation}
