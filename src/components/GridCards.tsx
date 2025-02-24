@@ -135,7 +135,7 @@ const GridCards = () => {
         </div>
         <div className='flex flex-col justify-end gap-4 h-[50%] w-[100%]'>
           <h3 className="text-2xl font-nohemi300 font-semibold mb-4 text-white">{"Scalable Network Growth"}</h3>
-          <p className="text-white font-nohemi200">{"Attract developers, users, and projects with intuitive tools—build a self-sustaining ecosystem."}</p>
+          <p className="text-white font-nohemi200">{"Attract developers, users, and projects with intuitive tools and build a self-sustaining ecosystem."}</p>
         </div>
       </motion.div>
     </motion.div>

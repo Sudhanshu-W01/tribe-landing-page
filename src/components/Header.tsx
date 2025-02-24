@@ -34,7 +34,7 @@ const Header: React.FC = () => {
   return (
     <header className="bg-transparent flex justify-between items-center w-full relative">
       <div className="text-white font-mulish text-xl font-semibold relative z-[100]">
-        <Image src="/assets/logo.png" alt="logo" width={70} height={20} />
+        <Image src="/assets/logo.png" alt="logo" width={80} height={30} />
       </div>
 
       {/* Desktop Navigation */}

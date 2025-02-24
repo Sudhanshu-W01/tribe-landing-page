@@ -49,9 +49,9 @@ function Footer() {
           </div>
         </div>
         {/* Image */}
-        <div className='relative w-full h-fit'>
+        <div className='relative w-full h-fit opacity-10'>
           <Image 
-            src="/assets/footer_tribe_img.png" 
+            src="/assets/footer-icon.png" 
             alt="footer tribe" 
             width={0}
             height={0}
