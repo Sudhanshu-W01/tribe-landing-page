@@ -3,16 +3,16 @@ import React from 'react'
 
 function Footer() {
   return (
-    <footer className="bg-primary flex flex-col w-full relative h-[80vh] py-10 px-8"
+    <footer className="bg-primary flex flex-col w-full relative h-fit py-10 px-8"
       style={{
         borderTop: "1px solid #E8EAED66",
       }}
     >
-      <div className='flex flex-col justify-between py-2 h-full'>
+      <div className='flex flex-col justify-start gap-8 py-2 h-full'>
         {/* Content  */}
-        <div className='flex flex-row flex-wrap justify-between h-[20%] w-full'>
+        <div className='flex flex-row justify-between h-[110px] w-full'>
           {/* Input Mail  */}
-          <div className='flex flex-col justify-between h-full w-[30%]'>
+          <div className='flex flex-col justify-between h-full gap-3 w-[30%]'>
             <p className='text-white font-nohemi300 text-3xl'>
               Join Our Mailing List
             </p>
@@ -51,7 +51,7 @@ function Footer() {
         {/* Image */}
         <div className='relative w-full h-fit opacity-10'>
           <Image 
-            src="/assets/footer-icon.png" 
+            src="/assets/Tribes.png" 
             alt="footer tribe" 
             width={0}
             height={0}

@@ -31,7 +31,7 @@ const HeroSection: React.FC = () => {
           
           <div className='w-full laptop:w-[30%] h-fit laptop:h-[80%] flex flex-row justify-center items-end order-3'>
             <p className='text-white text-lg laptop:text-xl font-nohemi200 text-center laptop:text-start w-full laptop:w-[70%]'>
-              Unite developers, token holders, and projects under one seamless community platform
+              Transparent, secure, and dynamic. Redefining how blockchain communities collaborate and grow.
             </p>
           </div>
         </div>
