@@ -1,11 +1,19 @@
 "use client"
 import React from 'react';
+import { useRouter } from 'next/navigation';
+import Header from './Header';
 
 const PrivacyPolicy: React.FC = () => {
+  const router = useRouter();
+
   return (
     <div className="w-full min-h-screen text-white p-8 laptop:p-16 relative">
+      <Header/>
       <div className="absolute inset-0 z-10 h-full w-full bg-[#0E0F0C] bg-[linear-gradient(to_right,#B0E681_1px,transparent_1px),linear-gradient(to_bottom,#B0E681_1px,transparent_1px)] bg-[size:34px_34px] opacity-5"></div>
       <div className="max-w-4xl mx-auto relative z-[100]">
+        <button onClick={() => router.back()} className="mb-4 cursor-pointer text-[#b0e681]">
+          ← Back
+        </button>
         <h1 className="text-4xl laptop:text-6xl font-nohemi400 mb-8 text-[#b0e681]">Privacy Policy</h1>
         
         <h2 className="text-2xl laptop:text-4xl font-nohemi300 mb-4">1. Introduction</h2>

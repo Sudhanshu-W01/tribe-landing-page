@@ -1,11 +1,13 @@
 "use client"
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const ContactUs: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -42,6 +44,9 @@ const ContactUs: React.FC = () => {
     <div className="w-full min-h-screen text-white p-8 laptop:p-16 relative">
       <div className="absolute inset-0 z-0 h-full w-full bg-[#0E0F0C] bg-[linear-gradient(to_right,#B0E681_1px,transparent_1px),linear-gradient(to_bottom,#B0E681_1px,transparent_1px)] bg-[size:34px_34px] opacity-5"></div>
       <div className="max-w-4xl mx-auto relative z-10">
+        <button onClick={() => router.back()} className="mb-4 cursor-pointer text-[#b0e681]">
+          ← Back
+        </button>
         <h1 className="text-4xl laptop:text-6xl font-nohemi400 mb-8 text-[#b0e681]">Contact Us</h1>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
           <div className="flex flex-col">
