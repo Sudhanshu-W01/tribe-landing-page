@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
+import Link from 'next/link';
 
 function Footer() {
   return (
@@ -25,25 +26,38 @@ function Footer() {
             <div className='flex flex-col gap-2'>
               <p className='text-[#939CAA] text-sm font-nohemi400'>SITEMAP</p>
               <div className='flex flex-col justify-end gap-2 h-full font-nohemi300 text-sm'>
-                <p>About Us</p>
-                <p>Founder Story</p>
-                <p>Contact</p>
+                <Link href="/about-us">
+                  <p>About Us</p>
+                </Link>
+                <Link href="/contact-us">
+                  <p>Contact Us</p>
+                </Link>
               </div>
             </div>
             <div className='flex flex-col gap-2'>
               <p className='text-[#939CAA] text-sm font-nohemi400'>LEGAL</p>
               <div className='flex flex-col justify-end gap-2 h-full font-nohemi300 text-sm'>
-                <p>Privacy Policy</p>
+                
+              <Link href="/privacy-policy">
+                  <p>Privacy Policy</p>
+                </Link>
+                <Link href="/terms">
                 <p>Terms & Conditions</p>
-                <p>LinkedIn</p>
+                </Link>
               </div>
             </div>
             <div className='flex flex-col gap-2'>
               <p className='text-[#939CAA] text-sm font-nohemi400'>SOCIALS</p>
               <div className='flex flex-col justify-end gap-2 h-full font-nohemi300 text-sm'>
-                <p>Twitter</p>
-                <p>Medium</p>
-                <p>LinkedIn</p>
+                <Link href="https://x.com/tribe_io">
+                  <p>Twitter</p>
+                </Link>
+                <Link href="https://medium.com/@tribe_io">
+                  <p>Medium</p>
+                </Link>
+                <Link href="https://www.linkedin.com/company/tribe-io">
+                  <p>LinkedIn</p>
+                </Link>
               </div>
             </div>
           </div>

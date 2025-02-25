@@ -11,6 +11,9 @@ const NavLink = ({ children }: { children: React.ReactNode }) => {
       className="relative cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => {
+        window.location.href = '/about-us';
+      }}
     >
       {children}
       <motion.div
