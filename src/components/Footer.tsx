@@ -66,7 +66,7 @@ function Footer() {
             <div className='flex flex-col gap-2'>
               <p className='text-[#939CAA] text-sm font-nohemi400'>SOCIALS</p>
               <div className='flex flex-col justify-end gap-2 h-full font-nohemi300 text-sm'>
-                <Link href="https://x.com/tribe_io">
+                <Link href="https://x.com/tribe_astrix">
                   <p>Twitter</p>
                 </Link>
                 <Link href="https://medium.com/@tribe_io">
