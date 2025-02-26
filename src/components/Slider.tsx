@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 const partnerLogos = [
   '/assets/fuse_icon.png',
   '/assets/Monad_icon.png',
-  '/assets/XDC_icon.png',
   '/assets/Xion_icon.png',
 ];
 
@@ -14,7 +13,6 @@ function Slider() {
   // Adjust total width based on new sizes
   const totalWidth = partnerLogos.reduce((acc, _, index) => {
     if (index === 1) return acc + 200 + 60; // width + gap
-    if (index === 2) return acc + 110 + 60;
     if (index === 3) return acc + 150 + 60;
     return acc + 150 + 60;
   }, 0);
@@ -25,7 +23,7 @@ function Slider() {
         {/* Title Section */}
         <div className='w-full laptop:w-[40%] h-[45%] laptop:h-full font-nohemi400 text-white text-lg laptop:text-4xl border-b laptop:border-b-0 laptop:border-r border-[#AFAFAF]/50 flex items-center justify-center py-2 px-4 laptop:px-12'>
           <p className='text-center laptop:text-left max-w-[280px] laptop:max-w-none'>
-            Trusted by Leading Innovators
+            Building For Leading Innovators
           </p>
         </div>
 
@@ -72,18 +70,6 @@ function Slider() {
                     style={{ objectFit: 'contain', maxHeight: '100%' }}
                   />
                 </div> : index === 2 ? <div 
-                    key={`${setIndex}-${index}`} 
-                    className="w-[110px] h-full relative flex-shrink-0 flex items-center justify-center"
-                  >
-                    <Image
-                      src={logo}
-                      alt={`partner ${index + 1}`}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 1024px) 60px, 100px"
-                      style={{ objectFit: 'contain', maxHeight: '100%' }}
-                    />
-                  </div> : index === 3 ? <div 
                     key={`${setIndex}-${index}`} 
                     className="w-[150px] h-full relative bottom-1 flex-shrink-0 flex items-center justify-center"
                   >

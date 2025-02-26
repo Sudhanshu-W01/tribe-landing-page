@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const container = {
@@ -8,8 +8,8 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.6
+      staggerChildren: 0.2,
+      delayChildren: 0.3
     }
   }
 };
@@ -20,6 +20,23 @@ const item = {
 };
 
 const GridCards = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <motion.div 
       variants={container}
@@ -83,18 +100,18 @@ const GridCards = () => {
       {/* Card 4 */}
       <motion.div 
         variants={item}
-        className="col-span-1 laptop:col-span-4 flex flex-row justify-end rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
+        className={`col-span-1 laptop:col-span-4 flex ${isMobile ? "flex-col" : "flex-row"} justify-end rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300`}
         style={{
           background: "radial-gradient(circle, rgba(87,92,82,0.57) 0%, rgba(32,34,28,0.54) 57%)"
         }}
       >
-        <div className='absolute top-0 left-0 w-[50%] h-[70%] aspect-square'>
+        <div className={`absolute top-0 left-0 ${isMobile ? "w-[240px] h-[165px]" : "w-[340px] h-[240px]"} z-[20]`}>
           <Image src="/assets/card4.png" alt="icon" className='w-full h-auto z-[100]' fill/>
           <div className='absolute top-[-10%] left-[-10%] w-[80%] bg-white blur-xl z-[10] rounded-full h-full'>
 
           </div>
         </div>
-        <div className='flex flex-col justify-end gap-4 w-[50%]'>
+        <div className={`flex flex-col gap-4 relative z-[30] ${isMobile ? "w-full h-[60%] justify-end" : "w-[50%] justify-end"}`}>
           <h3 className="text-2xl font-nohemi300 font-semibold mb-4 text-white">{"One Unified Platform"}</h3>
           <p className="text-white font-nohemi200">{"Unify every project, community, and update under one streamlined platform."}</p>
         </div>
@@ -103,15 +120,15 @@ const GridCards = () => {
       {/* Card 5 */}
       <motion.div 
         variants={item}
-        className="col-span-1 laptop:col-span-4 flex flex-row justify-between rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
+        className={`col-span-1 laptop:col-span-4 flex ${isMobile ? "flex-col" : "flex-row"} justify-between rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300`}
         style={{
           background: "radial-gradient(circle, rgba(87,92,82,0.57) 0%, rgba(32,34,28,0.54) 57%)"
         }}
       >
-        <div className="flex flex-col gap-4 relative w-[45%]">
+        <div className="flex flex-col gap-4 relative w-[100%] h-[50%]">
           <Image src="/assets/card5.png" alt="icon" objectFit='cover' className='w-full h-auto' fill/>
         </div>
-        <div className='flex flex-col justify-end gap-4 w-[50%]'>
+        <div className={`flex flex-col justify-end gap-4 ${isMobile ? "w-full h-[50%] justify-between" : "w-[50%] justify-end"}`}>
           <h3 className="text-2xl font-nohemi300 font-semibold mb-4 text-white">{"Engagement-Driven Rewards"}</h3>
           <p className="text-white font-nohemi200">{"Reward and recognize active contributors, driving consistent on-chain activity."}</p>
         </div>

@@ -40,7 +40,7 @@ function Footer() {
             </div>
           </div>
           {/* Page Links */}
-          <div className='flex flex-row justify-between gap-20'>
+          <div className={`flex flex-row justify-between ${isMobile ? "w-full" : "w-[clamp(40%,40%,70%)]"}`}>
             <div className='flex flex-col gap-2'>
               <p className='text-[#939CAA] text-sm font-nohemi400'>SITEMAP</p>
               <div className='flex flex-col justify-end gap-2 h-full font-nohemi300 text-sm'>
