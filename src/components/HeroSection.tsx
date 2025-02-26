@@ -1,5 +1,5 @@
 "use client"
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import heroAnimation from "../animations/herosection.json";
 
@@ -10,9 +10,26 @@ const Lottie = dynamic(() => import('lottie-react'), {
 });
 
 const HeroSection: React.FC = () => {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
-    <div className="w-full h-[700px] laptop:h-[700px] flex justify-between items-center">
-      <div className='flex flex-row justify-between items-center w-full h-[80%] relative overflow-hidden'>
+    <div className={`w-full flex justify-between items-center ${isMobile ? "h-[550px]" : "h-[700px]"}`}>
+      <div className={`flex flex-row justify-between items-center w-full ${isMobile ? "h-[100%]" : "h-[80%]"} relative overflow-hidden`}>
         <object
           data="/assets/Vector.svg"
           type="image/svg+xml"
@@ -22,8 +39,8 @@ const HeroSection: React.FC = () => {
         />
         
         <div className='relative z-[120] h-[80%] w-[100%] flex flex-col laptop:flex-row justify-between px-4 laptop:px-0'>
-          <div className='w-full laptop:w-[50%] h-fit laptop:h-full flex flex-row justify-start px-8 py-4 order-2 laptop:order-1'>
-            <p className='text-white text-3xl laptop:text-6xl font-nohemi400 text-center laptop:text-left'>
+          <div className={`w-full laptop:w-[50%] h-fit laptop:h-full flex flex-row justify-start px-8 py-4 order-2 laptop:order-1`}>
+            <p className={`text-white ${isMobile ? "text-2xl" : "text-3xl"} laptop:text-6xl font-nohemi400 text-center laptop:text-left`}>
               Unite Your Blockchain World—Developers, Holders, Projects, 
               All Together.
             </p>
@@ -36,11 +53,11 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        <div className='h-[40%] laptop:h-[80%] w-[70%] laptop:w-[75%] absolute translate-x-1/2 right-[50%] laptop:right-[40%] top-0 laptop:top-auto order-1 laptop:order-2'>
+        <div className={`${isMobile ? "h-[50%] w-full" : "h-[40%] w-[75%]"} w-[70%] laptop:w-[75%] absolute translate-x-1/2 right-[50%] laptop:right-[40%] top-0 laptop:top-auto order-1 laptop:order-2 `}>
           {/* Black Backdrop */}
           <div className='absolute w-[500px] h-[600px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-[#0E0F0C] blur-lg rounded-full z-[150]' />
 
-          <div className='absolute w-[600px] h-[600px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-[200]'>
+          <div className={`absolute ${isMobile ? "w-full h-full" : "w-[600px] h-[600px]"} left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-[200]`}>
             <Suspense fallback={<div className='w-full h-full bg-primary'></div>}>
               <Lottie 
                 animationData={heroAnimation}

@@ -3,7 +3,7 @@ import React from 'react'
 
 function Heading({title}: {title: string}) {
   return (
-    <div className='w-full h-fit flex flex-col items-center gap-4 laptop:gap-8'>
+    <div className='w-full h-fit flex flex-col items-center gap-4 laptop:gap-8 relative z-[200]'>
       <div>
         <Image 
           src="/assets/heading_icon.png" 

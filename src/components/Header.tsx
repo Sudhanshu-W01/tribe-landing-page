@@ -35,7 +35,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-transparent flex justify-between items-center w-full relative">
+    <header className="bg-transparent flex justify-between items-center w-full relative z-[1000] mt-5">
       <div className="text-white font-mulish text-xl font-semibold relative z-[100]">
         <Image src="/assets/logo.png" alt="logo" width={80} height={30} />
       </div>
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
 
       {/* Hamburger Menu Button */}
       <button 
-        className="laptop:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 z-50"
+        className="laptop:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 relative z-[1000]"
         onClick={toggleMenu}
       >
         <span 

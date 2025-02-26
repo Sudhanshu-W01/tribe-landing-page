@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 function Community() {
   return (
-    <div className='w-full h-[700px] laptop:h-[900px] flex flex-col items-center justify-center gap-8 laptop:gap-16 relative px-4 laptop:px-0'>
+    <div className='w-full h-[700px] laptop:h-[900px] flex flex-col items-center justify-center gap-8 laptop:gap-16 relative px-4 laptop:px-0 overflow-hidden'>
       <div className='absolute w-full h-[50%] flex flex-col blur-lg'>
         <div className='w-full rotate-6 top-[50px] h-[50%] relative hidden laptop:block'>
           <Image src="/assets/community_img1.png" alt="community" fill className='object-cover' />

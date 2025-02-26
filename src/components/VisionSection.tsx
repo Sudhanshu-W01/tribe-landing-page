@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Heading from './Heading';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -61,9 +61,25 @@ const CardContent: CardContentType[] = [
   }
 ]
 function VisionSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
-    <div className='w-full h-[900px] flex flex-col items-center gap-16 relative'>
-      <div className='absolute w-full h-full' style={{
+    <div className={`w-full ${isMobile ? "h-[1200px]" : "h-fit"} flex flex-col items-center gap-16 relative`}>
+      <div className='absolute w-full h-full z-[100]' style={{
         background: "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(14,15,12,1) 100%)",
       }}>
       </div>
@@ -80,14 +96,14 @@ function VisionSection() {
           amount: 0.3,
           margin: "-100px"
         }}
-        className='flex flex-col laptop:flex-row w-full h-[80vh] gap-6 relative'
+        className={`flex ${isMobile ? "flex-col h-[85%]" : "flex-row h-[80vh]"} w-full gap-6 relative z-[200]`}
       >
         {CardContent?.map((el: CardContentType, idx: number) => {
           return (
             <motion.div 
               key={idx} 
               variants={item}
-              className='w-full laptop:w-1/3 h-[600px] p-6 rounded-3xl border border-[#FFFFFF33] flex flex-col justify-between cursor-pointer transition-all duration-300' 
+              className={`${isMobile ? "w-full" : "w-1/3"} h-[600px] p-6 rounded-3xl border border-[#FFFFFF33] flex flex-col justify-between cursor-pointer transition-all duration-300`} 
               style={CardStyle}
               whileHover={{ 
                 scale: 1.05,

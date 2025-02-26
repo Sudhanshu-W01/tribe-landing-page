@@ -1,8 +1,26 @@
+"use client"
 import Image from 'next/image';
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 function Footer() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <footer className="bg-primary flex flex-col w-full relative h-fit py-10 px-8"
       style={{
@@ -11,9 +29,9 @@ function Footer() {
     >
       <div className='flex flex-col justify-start gap-8 py-2 h-full'>
         {/* Content  */}
-        <div className='flex flex-row justify-between h-[110px] w-full'>
+        <div className={`flex ${isMobile ? "flex-col-reverse gap-8 h-fit" : "flex-row justify-between h-[110px]"} w-full`}>
           {/* Input Mail  */}
-          <div className='flex flex-col justify-between h-full gap-3 w-[30%]'>
+          <div className={`flex flex-col justify-between h-full gap-3 ${isMobile ? "w-full" : "w-[30%]"}`}>
             <p className='text-white font-nohemi300 text-3xl'>
               Join Our Mailing List
             </p>
@@ -37,12 +55,11 @@ function Footer() {
             <div className='flex flex-col gap-2'>
               <p className='text-[#939CAA] text-sm font-nohemi400'>LEGAL</p>
               <div className='flex flex-col justify-end gap-2 h-full font-nohemi300 text-sm'>
-                
-              <Link href="/privacy-policy">
+                <Link href="/privacy-policy">
                   <p>Privacy Policy</p>
                 </Link>
                 <Link href="/terms">
-                <p>Terms & Conditions</p>
+                  <p>Terms & Conditions</p>
                 </Link>
               </div>
             </div>

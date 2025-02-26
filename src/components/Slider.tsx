@@ -20,8 +20,8 @@ function Slider() {
   }, 0);
 
   return (
-    <div className='w-full border border-[#AFAFAF]/50 bg-primary h-[180px] laptop:h-[200px] rounded-3xl laptop:rounded-full p-2.5 laptop:p-2 mx-auto'>
-      <div className='w-full h-full flex flex-col laptop:flex-row gap-4 border border-[#AFAFAF]/50 rounded-2xl laptop:rounded-full'>
+    <div className='w-full border border-[#AFAFAF]/50 bg-primary h-[180px] laptop:h-[200px] rounded-3xl laptop:rounded-full p-2 laptop:p-2 mx-auto'>
+      <div className='w-full h-full flex flex-col laptop:flex-row gap-4 border border-[#AFAFAF]/50 rounded-2xl laptop:rounded-full overflow-hidden'>
         {/* Title Section */}
         <div className='w-full laptop:w-[40%] h-[45%] laptop:h-full font-nohemi400 text-white text-lg laptop:text-4xl border-b laptop:border-b-0 laptop:border-r border-[#AFAFAF]/50 flex items-center justify-center py-2 px-4 laptop:px-12'>
           <p className='text-center laptop:text-left max-w-[280px] laptop:max-w-none'>

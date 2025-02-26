@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUs: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -12,11 +14,11 @@ const ContactUs: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
-
+    toast.dismiss();
     const formData = { name, email, message };
   
     try {
-      const response = await fetch('http://localhost:3001/contacts', {
+      const response = await fetch('http://localhost:3000/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -25,16 +27,15 @@ const ContactUs: React.FC = () => {
       });
   
       if (response.ok) {
-        console.log('Message sent successfully');
-        // Optionally, clear the form or show a success message
+        toast.success('Message sent successfully');
         setName('');
         setEmail('');
         setMessage('');
       } else {
-        console.error('Failed to send message');
+        toast.error('Failed to send message');
       }
     } catch (error) {
-      console.error('Error:', error);
+      toast.error(`${error}`);
     } finally {
       setLoading(false);
     }
@@ -42,6 +43,7 @@ const ContactUs: React.FC = () => {
 
   return (
     <div className="w-full min-h-screen text-white p-8 laptop:p-16 relative">
+      <ToastContainer />
       <div className="absolute inset-0 z-0 h-full w-full bg-[#0E0F0C] bg-[linear-gradient(to_right,#B0E681_1px,transparent_1px),linear-gradient(to_bottom,#B0E681_1px,transparent_1px)] bg-[size:34px_34px] opacity-5"></div>
       <div className="max-w-4xl mx-auto relative z-10">
         <button onClick={() => router.back()} className="mb-4 cursor-pointer text-[#b0e681]">
