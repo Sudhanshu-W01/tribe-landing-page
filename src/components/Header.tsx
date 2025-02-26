@@ -41,7 +41,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden laptop:flex p-1 relative right-[120px] border border-0.5 border-[#AFB6C0]/70 rounded-[30px]">
+      <div className="hidden laptop:flex p-1 relative right-[320px] border border-0.5 border-[#AFB6C0]/70 rounded-[30px]">
         <div className='flex flex-row items-center space-x-12 py-2 px-4 font-mulish text-white text-xs font-normal border border-0.42 border-[#AFB6C0]/50 rounded-[40px]'>
           <NavLink>About Us</NavLink>
           <NavLink>Resources</NavLink>
@@ -77,15 +77,36 @@ const Header: React.FC = () => {
         <div className="flex flex-col items-center pt-16 space-y-4 font-mulish text-white">
           <NavLink><a href="#" className="text-sm cursor-pointer">About Us</a></NavLink>
           <NavLink><a href="#" className="text-sm cursor-pointer">Resources</a></NavLink>
-          <button className="bg-[#B0E681] text-black font-mulish text-sm font-semibold px-6 py-1 rounded-full cursor-pointer active:bg-[#B0E681]/80">
+          <button 
+            onClick={() => window.location.href = 'https://tribes.astrix.live'}
+            className="bg-[#B0E681] text-black font-mulish text-sm font-semibold px-6 py-1 rounded-full cursor-pointer active:bg-[#B0E681]/80"
+          >
             Launch Tribe
+          </button>
+          <button 
+            onClick={() => window.location.href = 'https://app.astrix.live'}
+            className="bg-[#B0E681] text-black font-mulish text-sm font-semibold px-6 py-1 rounded-full cursor-pointer active:bg-[#B0E681]/80"
+          >
+            Launch App
           </button>
         </div>
       </div>
 
-      <button className="hidden laptop:block bg-[#b0e681] absolute right-0 box-content text-black font-mulish text-lg font-semibold px-8 py-2.5 rounded-full cursor-pointer hover:bg-[#9ede66] hover:scale-105 transition-all duration-300">
-        Launch Tribe
-      </button>
+      {/* Launch Buttons */}
+      <div className="flex space-x-4 absolute right-0">
+        <button 
+          onClick={() => window.location.href = 'https://tribes.astrix.live'}
+          className="hidden laptop:block bg-[#b0e681] text-black font-mulish text-lg font-semibold px-8 py-2.5 rounded-full cursor-pointer hover:bg-[#9ede66] hover:scale-105 transition-all duration-300"
+        >
+          Launch Tribe
+        </button>
+        <button 
+          onClick={() => window.location.href = 'https://app.astrix.live'}
+          className="hidden laptop:block bg-[#b0e681] text-black font-mulish text-lg font-semibold px-8 py-2.5 rounded-full cursor-pointer hover:bg-[#9ede66] hover:scale-105 transition-all duration-300"
+        >
+          Launch App
+        </button>
+      </div>
 
       {/* Mobile Launch Button */}
       {/* <button className="laptop:hidden mobile:hidden pixel:hidden fixed bottom-8 bg-[#B0E681] text-black font-mulish text-lg font-semibold px-8 py-2 rounded-full z-50">
