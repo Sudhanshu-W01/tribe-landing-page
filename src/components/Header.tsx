@@ -41,7 +41,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden laptop:flex p-1 relative right-[320px] border border-0.5 border-[#AFB6C0]/70 rounded-[30px]">
+      <div className="hidden laptop:flex p-1 relative right-[120px] border border-0.5 border-[#AFB6C0]/70 rounded-[30px]">
         <div className='flex flex-row items-center space-x-12 py-2 px-4 font-mulish text-white text-xs font-normal border border-0.42 border-[#AFB6C0]/50 rounded-[40px]'>
           <NavLink>About Us</NavLink>
           <NavLink>Resources</NavLink>
@@ -83,12 +83,12 @@ const Header: React.FC = () => {
           >
             Launch Tribe
           </button>
-          <button 
+          {/* <button 
             onClick={() => window.location.href = 'https://app.astrix.live'}
             className="bg-[#B0E681] text-black font-mulish text-sm font-semibold px-6 py-1 rounded-full cursor-pointer active:bg-[#B0E681]/80"
           >
             Launch App
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -100,12 +100,12 @@ const Header: React.FC = () => {
         >
           Launch Tribe
         </button>
-        <button 
+        {/* <button 
           onClick={() => window.location.href = 'https://app.astrix.live'}
           className="hidden laptop:block bg-[#b0e681] text-black font-mulish text-lg font-semibold px-8 py-2.5 rounded-full cursor-pointer hover:bg-[#9ede66] hover:scale-105 transition-all duration-300"
         >
           Launch App
-        </button>
+        </button> */}
       </div>
 
       {/* Mobile Launch Button */}
