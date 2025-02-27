@@ -2,10 +2,30 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { toast, ToastContainer } from 'react-toastify';
 
 function Footer() {
   const [isMobile, setIsMobile] = useState(false);
+  const [email, setEmail] = useState('');
 
+  const handleSubmit = async () => {
+    try{
+      const response = await fetch('https://astrix-blog-eydzefayhyb3esb6.centralindia-01.azurewebsites.net/api/waitList', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, name: email.split('@')[0], message: 'I am interested in the Astrix Tribe' })
+      });
+      if(response.ok){
+        toast.success('Email added to our mailing list');
+      }else{
+        toast.error('Failed to add email to mailing list');
+      }
+    }catch(error){
+      console.log(error);
+    }
+  }
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -27,6 +47,7 @@ function Footer() {
         borderTop: "1px solid #E8EAED66",
       }}
     >
+      <ToastContainer/>
       <div className='flex flex-col justify-start gap-8 py-2 h-full'>
         {/* Content  */}
         <div className={`flex ${isMobile ? "flex-col-reverse gap-8 h-fit" : "flex-row justify-between h-[110px]"} w-full`}>
@@ -36,7 +57,11 @@ function Footer() {
               Join Our Mailing List
             </p>
             <div className='w-full'>
-              <input type="text" placeholder='Type your email address' className='w-full text-xs bg-[#1F1F1F99] px-3 py-2 h-[50px] border border-[#31373F66] placeholder:text-[]#768293] font-mulish' />
+              <input type="text" onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handleSubmit();
+                }
+              }} onChange={(e) => setEmail(e.target.value)} value={email} placeholder='Type your email address' className='w-full text-xs bg-[#1F1F1F99] px-3 py-2 h-[50px] border border-[#31373F66] placeholder:text-[]#768293] font-mulish' />
             </div>
           </div>
           {/* Page Links */}

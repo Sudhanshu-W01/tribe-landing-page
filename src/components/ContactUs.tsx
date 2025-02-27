@@ -18,7 +18,7 @@ const ContactUs: React.FC = () => {
     const formData = { name, email, message };
   
     try {
-      const response = await fetch('http://localhost:3000/contacts', {
+      const response = await fetch('https://astrix-blog-eydzefayhyb3esb6.centralindia-01.azurewebsites.net/api/waitList', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
