@@ -221,7 +221,7 @@ const GridCards = () => {
               src="/assets/Card6.png"
               alt="icon"
               fill
-              cGridCardslassName="object-cover object-top"
+              className="object-cover object-top"
               priority
             />
           </div>
