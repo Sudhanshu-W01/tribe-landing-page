@@ -1,0 +1,19 @@
+import { twMerge } from "tailwind-merge";
+
+export default function Skeleton({
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      {...props}
+      className={twMerge(
+        "animate-pulse border border-[#31373F]",
+        props?.className,
+      )}
+      style={{
+        ...(props?.style || {}),
+        background: `radial-gradient(circle 500px at 5% 5%, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.04)`,
+      }}
+    />
+  );
+}
