@@ -30,7 +30,7 @@ function Benefits() {
             priority
           />
         </div>
-        <div className="relative z-10 pb-10">
+        <div className="relative z-10 pb-20">
           <GridCards />
         </div>
       </div>

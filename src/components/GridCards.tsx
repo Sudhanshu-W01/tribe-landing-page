@@ -124,10 +124,10 @@ const GridCards = () => {
         <div className="flex-1 flex flex-row justify-center items-start w-full h-[50%] laptop:pb-4">
           <div className="flex flex-row justify-center h-full gap-4 relative w-[90%] overflow-hidden">
             <Image
-              src="/assets/card3.png"
+              src="/assets/giftCards/card3.svg"
               alt="icon"
               fill
-              className="object-cover object-top"
+              className="object-contain scale-150 object-top"
               priority
             />
           </div>
@@ -178,14 +178,14 @@ const GridCards = () => {
       {/* Card 5 */}
       <motion.div
         // variants={item}
-        className={`col-span-1 laptop:col-span-4 px-8 pt-7 laptop:pl-0 laptop:pt-0 laptop:pb-5 flex gap-3 ${isMobile ? "flex-col" : "flex-row"} justify-between rounded-3xl shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300`}
+        className={`col-span-1 laptop:col-span-4 pl-8 pt-7 laptop:pl-0 laptop:pt-0 laptop:pb-5 flex gap-3 flex-col laptop:flex-row justify-between rounded-3xl shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300`}
         style={{
           background:
             "radial-gradient(circle, rgba(87,92,82,0.57) 0%, rgba(32,34,28,0.54) 57%)",
         }}
       >
         <div
-          className={`laptop:order-last flex flex-col justify-end gap-3 laptop:gap-6 ${isMobile ? "w-full justify-between" : "w-[50%] justify-end"} text-white text-center laptop:text-left`}
+          className={`laptop:order-last pr-8 flex flex-col gap-3 laptop:gap-6 w-full laptop:w-[50%] laptop:justify-end text-white text-center laptop:text-left`}
         >
           <h3 className="text-xl laptop:text-2xl font-nohemi300 font-bold">
             {"Engagement-Driven Rewards"}
@@ -198,7 +198,7 @@ const GridCards = () => {
         </div>
         <div className="flex-1 laptop:flex-grow-0 flex flex-col basis-4/6 gap-4 relative w-full h-[calc(100%-15px)]">
           <Image
-            src="/assets/card5.png"
+            src="/assets/giftCards/card5.svg"
             alt="icon"
             objectFit="fill"
             className="w-full h-auto object-cover"
