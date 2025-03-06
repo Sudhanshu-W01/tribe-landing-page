@@ -59,7 +59,7 @@ function Footer() {
       <div className="flex flex-col justify-start gap-8 py-2 h-full">
         {/* Content  */}
         <div
-          className={`flex ${isMobile ? "flex-col-reverse gap-8 h-fit" : "flex-row justify-between h-[110px]"} w-full`}
+          className={`flex ${isMobile ? "flex-col gap-8 h-fit" : "flex-row justify-between h-[110px]"} w-full`}
         >
           {/* Input Mail  */}
           <div
@@ -85,7 +85,7 @@ function Footer() {
           </div>
           {/* Page Links */}
           <div
-            className={`flex flex-row justify-between ${isMobile ? "w-full" : "w-[clamp(40%,40%,70%)]"}`}
+            className={`flex gap-12 flex-col tablet:flex-row tablet:gap-2 justify-between ${isMobile ? "w-full" : "w-[clamp(40%,40%,70%)]"}`}
           >
             <div className="flex flex-col gap-2">
               <p className="text-[#939CAA] text-sm font-nohemi400">SITEMAP</p>

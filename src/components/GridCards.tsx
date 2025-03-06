@@ -14,10 +14,10 @@ const container = {
   },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
+// const item = {
+//   hidden: { opacity: 0, y: 20 },
+//   show: { opacity: 1, y: 0 },
+// };
 
 const GridCards = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -42,11 +42,11 @@ const GridCards = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      className="grid grid-cols-1 laptop:grid-cols-7 grid-rows-none laptop:grid-rows-3 gap-4 p-4"
+      className="grid grid-cols-1 laptop:grid-cols-7 grid-rows-none laptop:grid-rows-3 gap-4"
     >
       {/* Card 1 */}
       <motion.div
-        variants={item}
+        // variants={item}
         className="col-span-1 laptop:col-span-4 flex flex-col laptop:flex-row justify-between rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
         style={{
           background:
@@ -76,7 +76,7 @@ const GridCards = () => {
 
       {/* Card 2 */}
       <motion.div
-        variants={item}
+        // variants={item}
         className="col-span-1 laptop:col-span-3 flex flex-col justify-between rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
         style={{
           background:
@@ -108,7 +108,7 @@ const GridCards = () => {
 
       {/* Card 3 */}
       <motion.div
-        variants={item}
+        // variants={item}
         className="px-8 pt-7 laptop:px-9 laptop:py-10 flex flex-col col-span-1 laptop:col-span-3 rounded-3xl shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
       >
         <div className="laptop:order-last flex flex-col laptop:justify-end gap-3 laptop:gap-6 text-white text-center laptop:text-left">
@@ -136,8 +136,8 @@ const GridCards = () => {
 
       {/* Card 4 */}
       <motion.div
-        variants={item}
-        className={`col-span-1 laptop:col-span-4 flex ${isMobile ? "flex-col" : "flex-row"} laptop:justify-end rounded-3xl p-6 shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300`}
+        // variants={item}
+        className={`col-span-1 laptop:col-span-4 flex ${isMobile ? "flex-col" : "flex-row"} laptop:justify-end rounded-3xl p-6 shadow-md aspect-square laptop:aspect-auto w-full h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300`}
         style={{
           background:
             "radial-gradient(circle, rgba(87,92,82,0.57) 0%, rgba(32,34,28,0.54) 57%)",
@@ -156,21 +156,28 @@ const GridCards = () => {
           </p>
         </div>
         <div
-          className={`absolute bottom-0 laptop:top-0 left-0 ${isMobile ? "w-[240px] h-[165px]" : "w-[340px] h-[240px]"} z-[20]`}
+          className={`absolute bottom-0 laptop:top-0 left-0 ${isMobile ? " w-56 h-56" : "w-[340px] h-[240px]"} z-[20]`}
         >
           <Image
             src="/assets/card4.png"
             alt="icon"
-            className="w-full h-auto z-[100]"
+            className="w-full h-auto z-[100] hidden laptop:block"
             fill
           />
-          <div className="absolute top-[-10%] left-[-10%] w-[80%] bg-white blur-xl z-[10] rounded-full h-full"></div>
+          <Image
+            src="/assets/benefits/mobile-globe.svg"
+            alt="icon"
+            fill
+            className="object-cover object-top laptop:hidden"
+            priority
+          />
+          <div className="absolute top-[-10%] left-[-10%] w-[80%] bg-white blur-xl z-[10] rounded-full h-full hidden laptop:block"></div>
         </div>
       </motion.div>
 
       {/* Card 5 */}
       <motion.div
-        variants={item}
+        // variants={item}
         className={`col-span-1 laptop:col-span-4 px-8 pt-7 laptop:pl-0 laptop:pt-0 laptop:pb-5 flex gap-3 ${isMobile ? "flex-col" : "flex-row"} justify-between rounded-3xl shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300`}
         style={{
           background:
@@ -202,7 +209,7 @@ const GridCards = () => {
 
       {/* Card 6 */}
       <motion.div
-        variants={item}
+        // variants={item}
         className="px-8 py-7 laptop:px-9 laptop:py-10 flex flex-col col-span-1 laptop:col-span-3 rounded-3xl shadow-md h-[400px] laptop:h-[350px] border border-[#FFFFFF33] relative overflow-hidden cursor-pointer transition-all duration-300"
       >
         <div className="laptop:order-last flex flex-col laptop:justify-end gap-3 laptop:gap-6 h-[60%] laptop:h-[50%] w-[100%] text-white text-center laptop:text-left">

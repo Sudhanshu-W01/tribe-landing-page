@@ -28,18 +28,20 @@ const HeroSection: React.FC = () => {
   }, []);
   return (
     <div
-      className={`w-full flex justify-between items-center ${isMobile ? "h-[560px]" : "h-[700px]"}`}
+      className={`w-full flex justify-between items-center ${isMobile ? "h-[560px] max-h-[80vh]" : "h-[700px]"}`}
     >
       <div
         className={`flex flex-row justify-between items-center w-full h-full mobile:h-[80%] relative overflow-hidden`}
       >
-        <object
-          data="/assets/Vector.svg"
-          type="image/svg+xml"
-          className="absolute inset-0 w-screen top-[50%] -translate-y-[50%]"
-          aria-label="background vector"
-          style={{ maxWidth: "100%" }}
-        />
+        <div>
+          <object
+            data="/assets/Vector.svg"
+            type="image/svg+xml"
+            className="absolute inset-0 w-screen h- top-[50%] -translate-y-[50%] object-contain"
+            aria-label="background vector"
+            style={{ maxWidth: "100%" }}
+          />
+        </div>
         {/* <object
           data="/assets/bg-grid.svg"
           type="image/svg+xml"
@@ -48,7 +50,7 @@ const HeroSection: React.FC = () => {
           style={{ maxWidth: "100%" }}
         /> */}
 
-        <div className="max-w-[1440px] mx-auto px-12 relative z-[120] h-full w-[100%] flex flex-col laptop:flex-row justify-between laptop:px-8">
+        <div className="max-w-[1440px] mx-auto px-8 relative z-[120] h-full w-full flex flex-col laptop:flex-row justify-between laptop:px-8">
           <div
             className={`w-full laptop:w-[50%] h-fit laptop:h-full flex flex-row justify-start px-8 pl-0 py-4 order-2 laptop:order-1`}
           >
@@ -62,7 +64,7 @@ const HeroSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="w-full laptop:w-[30%] h-fit laptop:h-[80%] flex flex-row justify-end items-end order-3">
+          <div className="w-full pb-10 laptop:w-[30%] h-fit laptop:h-[80%] flex flex-row justify-end items-end order-3">
             <p className="text-white font-semibold text-xs laptop:text-xl font-nohemi200 text-start w-52 laptop:w-[70%]">
               Transparent, secure, and dynamic. Redefining how blockchain
               communities collaborate and grow.

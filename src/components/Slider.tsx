@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const partnerLogos = [
   "/assets/fuse-icon.svg",
   "/assets/monad-icon.svg",
-  "/assets/xion.svg",
+  "/assets/xion-icon.svg",
 ];
 
 function Slider() {
@@ -19,17 +19,17 @@ function Slider() {
 
   return (
     <div className="max-w-[1440px] w-full mx-auto px-4 laptop:px-8">
-      <div className="border border-[#AFAFAF]/50 bg-primary h-28 laptop:h-[200px] rounded-full p-[1.5px] laptop:p-2">
+      <div className="border border-[#AFAFAF]/50 bg-primary h-[4.8rem] mobile:h-24 laptop:h-[200px] rounded-full p-[1.5px] laptop:p-2">
         <div className="w-full h-full flex gap-4 items-center border border-[#AFAFAF]/50 rounded-full overflow-hidden">
           {/* Title Section */}
-          <div className="w-full laptop:w-[40%] self-stretch font-nohemi400 text-white text-lg laptop:text-4xl border-r border-[#AFAFAF]/50 flex items-center justify-center py-2 px-4 laptop:px-12">
+          <div className="w-2/5 self-stretch font-nohemi400 text-white text-lg laptop:text-4xl border-r border-[#AFAFAF]/50 flex items-center justify-center py-2 px-4 laptop:px-12">
             <p className="text-center laptop:text-left max-w-[280px] laptop:max-w-none">
               Building For
             </p>
           </div>
 
           {/* Slider Section */}
-          <div className="w-full laptop:w-[60%] h-[55%] laptop:h-full flex flex-row items-center justify-center relative overflow-hidden laptop:rounded-tr-full laptop:rounded-br-full">
+          <div className="basis-3/5 px-10 laptop:px-8 h-[55%] laptop:h-full flex flex-row items-center justify-center relative overflow-hidden laptop:rounded-tr-full laptop:rounded-br-full">
             {/* Gradient Overlays */}
             <div
               className="absolute w-full h-full z-20"
@@ -42,7 +42,7 @@ function Slider() {
 
             {/* Updated Infinite Horizontal scroll animation */}
             <motion.div
-              className="flex flex-row gap-8 laptop:gap-16 px-7 laptop:px-8"
+              className="flex flex-row gap-8 laptop:gap-16"
               animate={{
                 x: [0, -totalWidth],
               }}
@@ -65,7 +65,7 @@ function Slider() {
                   {partnerLogos.map((logo, index) => (
                     <div
                       key={`${setIndex}-${index}`}
-                      className="w-[200px] h-16 relative flex-shrink-0 flex items-center justify-center"
+                      className="tablet:w-[200px] w-20 h-5 mobile:h-8 tablet:h-12 laptop:h-16 relative flex-shrink-0 flex items-center justify-center"
                     >
                       <Image
                         src={logo}
