@@ -65,7 +65,9 @@ function Slider() {
                   {partnerLogos.map((logo, index) => (
                     <div
                       key={`${setIndex}-${index}`}
-                      className="tablet:w-[200px] w-20 h-5 mobile:h-8 tablet:h-12 laptop:h-16 relative flex-shrink-0 flex items-center justify-center"
+                      className={`${index === 2 ? "-translate-y-[6px]" : ""} ${
+                        index === 1 ? "scale-150 mx-12" : ""
+                      } tablet:w-[200px] w-20 h-5 mobile:h-8 tablet:h-12 laptop:h-16 relative flex-shrink-0 flex items-center justify-center`}
                     >
                       <Image
                         src={logo}
