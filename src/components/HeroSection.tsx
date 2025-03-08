@@ -76,7 +76,9 @@ const HeroSection: React.FC = () => {
           className={`block ${isMobile ? "h-[100%] w-full" : "h-[40%] w-[75%]"} w-[100%] laptop:w-[75%] absolute translate-x-1/2 right-[50%] laptop:right-[40%] top-auto order-1 laptop:order-2 `}
         >
           {/* Black Backdrop */}
-          <div className="absolute w-[200px] h-full laptop:h-[600px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-[#0E0F0C] blur-lg rounded-full z-[150]" />
+          <div
+            className={`absolute w-[300px] aspect-square mobile:w-[400px] tablet:w-[540px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-[#0E0F0C] blur-xl rounded-full z-[150]`}
+          />
 
           <div
             className={`absolute ${isMobile ? "w-full h-full" : "w-[600px] h-[600px]"} left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-[200]`}
