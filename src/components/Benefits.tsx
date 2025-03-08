@@ -19,7 +19,7 @@ function Benefits() {
           backgroundSize: "100% auto",
           backgroundPositionX: "center",
         }}
-        className="laptop:bg-none w-[95%] laptop:w-[85%] h-fit relative"
+        className="laptop:bg-none w-full laptop:w-[85%] h-fit relative"
       >
         <div className="absolute inset-0 w-full h-full animate-pulse transition-all duration-300 hidden laptop:block">
           <Image
@@ -30,7 +30,7 @@ function Benefits() {
             priority
           />
         </div>
-        <div className="relative z-10">
+        <div className="relative z-10 pb-20">
           <GridCards />
         </div>
       </div>
