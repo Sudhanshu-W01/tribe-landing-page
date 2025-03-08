@@ -62,7 +62,7 @@ const Header: React.FC = () => {
       </div>
 
       <button
-        onClick={() => (window.location.href = "https://tribes.astrix.live")}
+        onClick={() => (window.location.href = "https://tribe.astrix.live")}
         className="laptop:hidden bg-[#B0E681] text-black font-mulish text-sm font-semibold px-6 py-1 rounded-full cursor-pointer active:bg-[#B0E681]/80"
       >
         Launch Tribe
@@ -135,7 +135,7 @@ const Header: React.FC = () => {
       {/* Launch Buttons */}
       <div className="flex space-x-4 absolute right-8">
         <button
-          onClick={() => (window.location.href = "https://tribes.astrix.live")}
+          onClick={() => (window.location.href = "https://tribe.astrix.live")}
           className="hidden laptop:block bg-[#b0e681] text-black font-mulish text-lg font-semibold px-8 py-2.5 rounded-full cursor-pointer hover:bg-[#9ede66] hover:scale-105 transition-all duration-300"
         >
           Launch Tribe
