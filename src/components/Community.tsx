@@ -26,8 +26,10 @@ function Community() {
       </div>
       <Heading title="SIMPLIFY COMMUNITY BUILDING" />
       <p className="w-full laptop:w-[70%] text-center font-nohemi300 text-white text-xl laptop:text-4xl">
-        A unified platform for blockchain communities to connect, govern, and
-        grow together. Manage everything from one place with token-gated access.
+        A unified platform for on-chain communities to connect, govern, and
+        growtogether.
+        <br />
+        Manage everything from one place.
       </p>
     </div>
   );

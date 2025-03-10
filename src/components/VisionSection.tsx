@@ -51,14 +51,13 @@ const CardContent: CardContentType[] = [
   {
     title: "Single Source of Truth",
     imageLink: "/assets/ssit-img.svg",
-    description:
-      "Provide one cohesive platform for entire blockchain ecosystems.",
+    description: "Provide one cohesive platform for entire ecosystems.",
   },
   {
     title: "Community Empowerment",
     imageLink: "/assets/ce-img.svg",
     description:
-      "Put power and ownership in the hands of token holders and builders.",
+      "Put power and ownership in the hands of builders and token holders.",
   },
   {
     title: "Scalable Growth",
