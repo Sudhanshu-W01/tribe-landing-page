@@ -72,7 +72,11 @@ const Header: React.FC = () => {
       <div className="hidden laptop:flex p-1 relative right-[120px] border border-0.5 border-[#AFB6C0]/70 rounded-[30px]">
         <div className="flex flex-row items-center space-x-12 py-2 px-4 font-mulish text-white text-xs font-normal border border-0.42 border-[#AFB6C0]/50 rounded-[40px]">
           <NavLink>About Us</NavLink>
-          <NavLink>Resources</NavLink>
+          <NavLink>
+            <a href="https://tribessdk.vercel.app" target="_blank" className="text-sm cursor-pointer">
+              Resources
+            </a>
+          </NavLink>
           <div></div>
         </div>
       </div>
@@ -111,7 +115,7 @@ const Header: React.FC = () => {
             </a>
           </NavLink>
           <NavLink>
-            <a href="#" className="text-sm cursor-pointer">
+            <a href="https://tribessdk.vercel.app" target="_blank" className="text-sm cursor-pointer">
               Resources
             </a>
           </NavLink>
