@@ -11,9 +11,6 @@ const NavLink = ({ children }: { children: React.ReactNode }) => {
       className="relative cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => {
-        window.location.href = "/about-us";
-      }}
     >
       {children}
       <motion.div
@@ -71,7 +68,11 @@ const Header: React.FC = () => {
       {/* Desktop Navigation */}
       <div className="hidden laptop:flex p-1 relative right-[120px] border border-0.5 border-[#AFB6C0]/70 rounded-[30px]">
         <div className="flex flex-row items-center space-x-12 py-2 px-4 font-mulish text-white text-xs font-normal border border-0.42 border-[#AFB6C0]/50 rounded-[40px]">
-          <NavLink>About Us</NavLink>
+          <NavLink>
+            <a href="/about-us" className="text-sm cursor-pointer">
+              About Us
+            </a>
+          </NavLink>
           <NavLink>
             <a href="https://tribessdk.vercel.app" target="_blank" className="text-sm cursor-pointer">
               Resources
@@ -110,7 +111,7 @@ const Header: React.FC = () => {
       >
         <div className="flex flex-col items-center pt-16 space-y-4 font-mulish text-white">
           <NavLink>
-            <a href="#" className="text-sm cursor-pointer">
+            <a href="/about-us" className="text-sm cursor-pointer">
               About Us
             </a>
           </NavLink>
