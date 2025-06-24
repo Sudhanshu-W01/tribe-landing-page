@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import JoinWaitlistModal from "./joinWaitlistFormModal";
 
 const NavLink = ({ children }: { children: React.ReactNode }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -26,6 +27,7 @@ const NavLink = ({ children }: { children: React.ReactNode }) => {
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -59,10 +61,12 @@ const Header: React.FC = () => {
       </div>
 
       <button
-        onClick={() => (window.location.href = "https://tribe.astrix.live")}
+        // onClick={() => (window.location.href = "https://tribe.astrix.live")}
+        onClick={() => setIsModalOpen(true)}
         className="laptop:hidden bg-[#B0E681] text-black font-mulish text-sm font-semibold px-6 py-1 rounded-full cursor-pointer active:bg-[#B0E681]/80"
       >
-        Launch Tribe
+        {/* Launch Tribe */}
+        Join Waitlist
       </button>
 
       {/* Desktop Navigation */}
@@ -74,7 +78,11 @@ const Header: React.FC = () => {
             </a>
           </NavLink>
           <NavLink>
-            <a href="https://tribessdk.vercel.app" target="_blank" className="text-sm cursor-pointer">
+            <a
+              href="https://tribessdk.vercel.app"
+              target="_blank"
+              className="text-sm cursor-pointer"
+            >
               Resources
             </a>
           </NavLink>
@@ -116,7 +124,11 @@ const Header: React.FC = () => {
             </a>
           </NavLink>
           <NavLink>
-            <a href="https://tribessdk.vercel.app" target="_blank" className="text-sm cursor-pointer">
+            <a
+              href="https://tribessdk.vercel.app"
+              target="_blank"
+              className="text-sm cursor-pointer"
+            >
               Resources
             </a>
           </NavLink>
@@ -139,11 +151,14 @@ const Header: React.FC = () => {
 
       {/* Launch Buttons */}
       <div className="flex space-x-4 absolute right-8">
+        <JoinWaitlistModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
         <button
-          onClick={() => (window.location.href = "https://tribe.astrix.live")}
+          // onClick={() => (window.location.href = "https://tribe.astrix.live")}
+          onClick={() => setIsModalOpen(true)}
           className="hidden laptop:block bg-[#b0e681] text-black font-mulish text-lg font-semibold px-8 py-2.5 rounded-full cursor-pointer hover:bg-[#9ede66] hover:scale-105 transition-all duration-300"
         >
-          Launch Tribe
+          {/* Launch Tribe */}
+          Join Waitlist
         </button>
         {/* <button
           onClick={() => window.location.href = 'https://app.astrix.live'}
