@@ -80,7 +80,7 @@ export default function JoinWaitlistModal({
       setFormData({ fullname: "", role: "", collegeName: "", email: "" });
       toast.success("You've successfully joined the waitlist!");
       setIsOpen(false);
-    } catch (err) {
+    } catch {
       toast.error("Something went wrong!");
     } finally {
       setSubmitting(false);
