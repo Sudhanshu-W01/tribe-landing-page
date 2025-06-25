@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Tribe",
@@ -29,14 +29,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
-          rel="stylesheet" />
+          rel="stylesheet"
+        />
         <link rel="icon" href="/assets/logo.png" />
         <link rel="apple-touch-icon" href="/assets/logo.png" />
       </head>
-      <body
-        className="bg-primary flex flex-row justify-center w-[100vw] h-fit"
-      >
+      <body className="bg-primary flex flex-row justify-center w-[100vw] h-fit">
         {children}
+        <Toaster position="top-center" richColors />
       </body>
     </html>
   );
