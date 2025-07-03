@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
@@ -26,6 +28,7 @@ export default function JoinWaitlistModal({
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
+  const [joined, setJoined] = useState(false);
 
   const roles = ["Student", "Builder", "Other"];
 
@@ -79,7 +82,8 @@ export default function JoinWaitlistModal({
 
       setFormData({ fullname: "", role: "", collegeName: "", email: "" });
       toast.success("You've successfully joined the waitlist!");
-      setIsOpen(false);
+      // setIsOpen(false);
+      setJoined(true);
     } catch {
       toast.error("Something went wrong!");
     } finally {
@@ -141,108 +145,141 @@ export default function JoinWaitlistModal({
             &times;
           </button>
 
-          <h2 className="text-2xl font-semibold mb-4 text-[#b0e681] font-nohemi500">
-            Join the Waitlist
-          </h2>
-
-          <form onSubmit={handleSubmit} noValidate>
-            <div className="mb-4">
-              <label className="block mb-1 font-medium font-mulish">
-                Full Name
-              </label>
-              <input
-                type="text"
-                name="fullname"
-                value={formData.fullname}
-                onChange={handleChange}
-                placeholder="John Doe"
-                className="w-full border-2 bg-[#000] border-[#768293] placeholder:text-[#768293] rounded-xl px-3 py-2 outline-none "
-              />
-              {errors.fullname && (
-                <p className="text-red-400 text-sm">{errors.fullname}</p>
-              )}
-            </div>
-
-            <div className="mb-4  overflow-hidden" ref={dropdownRef}>
-              <label className="block mb-1 font-medium font-mulish">Role</label>
-              <div
-                className="relative  w-full rounded-xl px-3 py-2 border-2 bg-[#000] border-[#768293] cursor-pointer"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+          {joined ? (
+            <div className="w-full max-w-[94%] p-4 text-base font-medium flex justify-center items-center h-full gap-4 flex-col">
+              <p className="text-center text-lg">
+                Waitlist Joined Successfully!
+              </p>
+              <p className="text-center">
+                Thanks for joining. For early access to Tribes, real-time
+                updates, sneak-peek demos, and airdrop news — everything drops
+                first in our Telegram community.
+              </p>
+              <Link
+                href="https://t.me/+jEcS9K985jk1MzRl"
+                target="_blank"
+                className="rounded-lg px-4 py-2 bg-[#29b6f6] text-white text-lg font-medium h-[40px] whitespace-nowrap flex justify-center items-center gap-2"
               >
-                <span
-                  className={`${
-                    formData.role ? "text-white" : "text-gray-600"
-                  }`}
-                >
-                  {formData.role || "Select your role"}
-                </span>
-                <div className="absolute right-3 top-2.5 text-gray-400">
-                  &#9662;
-                </div>
-              </div>
-
-              {dropdownOpen && (
-                <div className="absolute border-2 bg-[#000] border-[#768293] w-full mt-1  rounded-xl shadow z-10 ">
-                  {roles.map((role) => (
-                    <div
-                      key={role}
-                      onClick={() => handleRoleSelect(role)}
-                      className="px-4 py-2 hover:bg-gray-800 cursor-pointer rounded-xl"
-                    >
-                      {role}
-                    </div>
-                  ))}
-                </div>
-              )}
-              {errors.role && (
-                <p className="text-red-400 text-sm">{errors.role}</p>
-              )}
-            </div>
-
-            {formData.role === "Student" && (
-              <div className="mb-4">
-                <label className="block mb-1 font-medium">College Name</label>
-                <input
-                  type="text"
-                  name="collegeName"
-                  value={formData.collegeName}
-                  onChange={handleChange}
-                  placeholder="College/University Name"
-                  className="w-full  rounded-xl px-3 py-2 outline-none  border-2 bg-[#000] border-[#768293] placeholder:text-gray-600"
+                <span> Join Telegram</span>
+                <Image
+                  src="/assets/icons/telegram.svg"
+                  width={30}
+                  height={30}
+                  alt="telegram icon"
                 />
-                {errors.collegeName && (
-                  <p className="text-red-400 text-sm">{errors.collegeName}</p>
-                )}
-              </div>
-            )}
-
-            <div className="mb-6">
-              <label className="block mb-1 font-medium">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={
-                  emailFromFooter !== undefined
-                    ? emailFromFooter
-                    : formData.email
-                }
-                onChange={handleChange}
-                placeholder="johndoe@example.com"
-                className="w-full  rounded-xl px-3 py-2 outline-none border-2 bg-[#000] border-[#768293] placeholder:text-gray-600"
-              />
-              {errors.email && (
-                <p className="text-red-400 text-sm">{errors.email}</p>
-              )}
+              </Link>
             </div>
+          ) : (
+            <>
+              <h2 className="text-2xl font-semibold mb-4 text-[#b0e681] font-nohemi500">
+                Join the Waitlist
+              </h2>
+              <form onSubmit={handleSubmit} noValidate>
+                <div className="mb-4">
+                  <label className="block mb-1 font-medium font-mulish">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    name="fullname"
+                    value={formData.fullname}
+                    onChange={handleChange}
+                    placeholder="John Doe"
+                    className="w-full border-2 bg-[#000] border-[#768293] placeholder:text-[#768293] rounded-xl px-3 py-2 outline-none "
+                  />
+                  {errors.fullname && (
+                    <p className="text-red-400 text-sm">{errors.fullname}</p>
+                  )}
+                </div>
 
-            <button
-              type="submit"
-              disabled={submitting}
-              className="w-full bg-[#b0e681] text-black py-2 rounded-xl hover:brightness-125 text-lg font-medium "
-            >
-              {submitting ? "Joining..." : "Join"}
-            </button>
-          </form>
+                <div className="mb-4  overflow-hidden" ref={dropdownRef}>
+                  <label className="block mb-1 font-medium font-mulish">
+                    Role
+                  </label>
+                  <div
+                    className="relative  w-full rounded-xl px-3 py-2 border-2 bg-[#000] border-[#768293] cursor-pointer"
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                  >
+                    <span
+                      className={`${
+                        formData.role ? "text-white" : "text-gray-600"
+                      }`}
+                    >
+                      {formData.role || "Select your role"}
+                    </span>
+                    <div className="absolute right-3 top-2.5 text-gray-400">
+                      &#9662;
+                    </div>
+                  </div>
+
+                  {dropdownOpen && (
+                    <div className="absolute border-2 bg-[#000] border-[#768293] w-full mt-1  rounded-xl shadow z-10 ">
+                      {roles.map((role) => (
+                        <div
+                          key={role}
+                          onClick={() => handleRoleSelect(role)}
+                          className="px-4 py-2 hover:bg-gray-800 cursor-pointer rounded-xl"
+                        >
+                          {role}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {errors.role && (
+                    <p className="text-red-400 text-sm">{errors.role}</p>
+                  )}
+                </div>
+
+                {formData.role === "Student" && (
+                  <div className="mb-4">
+                    <label className="block mb-1 font-medium">
+                      College Name
+                    </label>
+                    <input
+                      type="text"
+                      name="collegeName"
+                      value={formData.collegeName}
+                      onChange={handleChange}
+                      placeholder="College/University Name"
+                      className="w-full  rounded-xl px-3 py-2 outline-none  border-2 bg-[#000] border-[#768293] placeholder:text-gray-600"
+                    />
+                    {errors.collegeName && (
+                      <p className="text-red-400 text-sm">
+                        {errors.collegeName}
+                      </p>
+                    )}
+                  </div>
+                )}
+
+                <div className="mb-6">
+                  <label className="block mb-1 font-medium">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={
+                      emailFromFooter !== undefined
+                        ? emailFromFooter
+                        : formData.email
+                    }
+                    onChange={handleChange}
+                    placeholder="johndoe@example.com"
+                    className="w-full  rounded-xl px-3 py-2 outline-none border-2 bg-[#000] border-[#768293] placeholder:text-gray-600"
+                  />
+                  {errors.email && (
+                    <p className="text-red-400 text-sm">{errors.email}</p>
+                  )}
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full bg-[#b0e681] text-black py-2 rounded-xl hover:brightness-125 text-lg font-medium "
+                >
+                  {submitting ? "Joining..." : "Join"}
+                </button>
+              </form>
+            </>
+          )}
         </div>
       </div>
     </div>
