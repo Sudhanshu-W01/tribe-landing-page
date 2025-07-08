@@ -133,7 +133,6 @@ export default function JoinWaitlistModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
       <div
         className="bg-[linear-gradient(to_right,#B0E681_1px,transparent_1px),linear-gradient(to_bottom,#B0E681_1px,transparent_1px)] bg-[size:34px_34px] w-full max-w-md rounded-xl border-2 border-[#31373F]"
-        // style={{ boxShadow: "0 2px 5px 1px #b0e681" }}
       >
         <div className="bg-black  w-full max-w-md rounded-xl p-12 shadow-lg relative font-mulish opacity-[0.92]">
           <button
