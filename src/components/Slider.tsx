@@ -3,10 +3,17 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// const partnerLogos = [
+//   "/assets/fuse-icon.svg",
+//   "/assets/monad-icon.svg",
+//   "/assets/xion-icon.svg",
+// ];
 const partnerLogos = [
-  "/assets/fuse-icon.svg",
-  "/assets/monad-icon.svg",
-  "/assets/xion-icon.svg",
+  "/partners/xdc.svg",
+  "/partners/thub.svg",
+  "/partners/w3logo.svg",
+  "/partners/fourpaws.svg",
+  "/partners/hashnslash.svg",
 ];
 
 function Slider() {
@@ -24,7 +31,8 @@ function Slider() {
           {/* Title Section */}
           <div className="w-2/5 self-stretch font-nohemi400 text-white text-lg laptop:text-4xl border-r border-[#AFAFAF]/50 flex items-center justify-center py-2 px-4 laptop:px-12">
             <p className="text-center laptop:text-left max-w-[280px] laptop:max-w-none">
-              Building For
+              {/* Building For */}
+              Partners
             </p>
           </div>
 
@@ -57,25 +65,23 @@ function Slider() {
               style={{ width: "fit-content" }}
             >
               {/* Three sets of images for smoother infinite loop */}
-              {[...Array(3)].map((_, setIndex) => (
+              {[...Array(5)].map((_, setIndex) => (
                 <div
                   key={`set-${setIndex}`}
-                  className="flex flex-row gap-8 laptop:gap-16"
+                  className="flex flex-row items-center justify-center gap-8 laptop:gap-16"
                 >
                   {partnerLogos.map((logo, index) => (
                     <div
                       key={`${setIndex}-${index}`}
-                      className={`${index === 2 ? "-translate-y-[6px]" : ""} ${
-                        index === 1 ? "scale-150 mx-12" : ""
-                      } tablet:w-[200px] w-20 h-5 mobile:h-8 tablet:h-12 laptop:h-16 relative flex-shrink-0 flex items-center justify-center`}
+                      className={` relative aspect-[5/3] w-20 tablet:w-[200px] flex items-center justify-center`}
                     >
                       <Image
                         src={logo}
                         alt={`partner ${index + 1}`}
                         fill
-                        className="object-contain"
-                        sizes="(max-width: 1024px) 60px, 100px"
-                        style={{ objectFit: "contain" }}
+                        className=" w-full h-full"
+                        // sizes="(max-width: 1024px) 60px, 100px"
+                        // style={{ objectFit: "contain" }}
                       />
                     </div>
                   ))}

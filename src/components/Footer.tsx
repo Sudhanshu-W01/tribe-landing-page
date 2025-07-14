@@ -103,6 +103,16 @@ function Footer() {
             }`}
           >
             <div className="flex flex-col gap-2">
+              <p className="text-[#939CAA] text-sm font-nohemi400">
+                Powered By
+              </p>
+              <div className="flex flex-col justify-center gap-2 h-full font-nohemi300 text-sm">
+                <Link href="/https://xdc.org" target="_blank">
+                  <p>XDC</p>
+                </Link>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
               <p className="text-[#939CAA] text-sm font-nohemi400">SITEMAP</p>
               <div className="flex flex-col justify-end gap-2 h-full font-nohemi300 text-sm">
                 <Link href="/about-us">

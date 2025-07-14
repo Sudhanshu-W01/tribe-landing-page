@@ -54,20 +54,31 @@ const HeroSection: React.FC = () => {
           <div
             className={`w-full laptop:w-[50%] h-fit laptop:h-full flex flex-row justify-start px-8 pl-0 py-4 order-2 laptop:order-1`}
           >
-            <p
+            {/* <p
               className={`text-white ${isMobile ? "text-2xl" : "text-3xl"} text-2xl laptop:text-[52px] font-bold font-nohemi400 laptop:text-left leading-none`}
             >
               Unite Your Blockchain <br />
               World—Developers, <br />
               Holders, Projects, <br />
               All Together.
+            </p> */}
+            <p
+              className={`text-white ${isMobile ? "text-2xl" : "text-3xl"} text-2xl laptop:text-[52px] font-bold font-nohemi400 laptop:text-left leading-none`}
+            >
+              Bring Developers,<br />
+             Token-holders and <br />
+              Projects Together, <br />
+              — Seamlessly.
             </p>
           </div>
 
           <div className="w-full pb-10 laptop:w-[30%] h-fit laptop:h-[80%] flex flex-row justify-end items-end order-3">
-            <p className="text-white font-semibold text-xs laptop:text-xl font-nohemi200 text-start w-52 laptop:w-[70%]">
+            {/* <p className="text-white font-semibold text-xs laptop:text-xl font-nohemi200 text-start w-52 laptop:w-[70%]">
               Transparent, secure, and dynamic. Redefining how blockchain
               communities collaborate and grow.
+            </p> */}
+            <p className="text-white font-semibold text-xs laptop:text-xl font-nohemi200 text-start w-52 laptop:w-[70%]">
+              A secure, transparent hub where every on-chain community can connect, collaborate, and thrive.
             </p>
           </div>
         </div>
