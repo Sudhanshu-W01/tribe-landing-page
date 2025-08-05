@@ -61,12 +61,12 @@ const Header: React.FC = () => {
       </div>
 
       <button
-        // onClick={() => (window.location.href = "https://tribe.astrix.live")}
-        onClick={() => setIsModalOpen(true)}
+        onClick={() => (window.location.href = "https://apptribes.astrix.live")}
+{/*         onClick={() => } */}
         className="laptop:hidden bg-[#B0E681] text-black font-mulish text-sm font-semibold px-6 py-1 rounded-full cursor-pointer active:bg-[#B0E681]/80"
       >
         {/* Launch Tribe */}
-        Join Waitlist
+        Join Now
       </button>
 
       {/* Desktop Navigation */}
@@ -153,12 +153,12 @@ const Header: React.FC = () => {
       <div className="flex space-x-4 absolute right-8">
         <JoinWaitlistModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />
         <button
-          // onClick={() => (window.location.href = "https://tribe.astrix.live")}
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => (window.location.href = "https://apptribes.astrix.live")}
+{/*           onClick={() => setIsModalOpen(true)} */}
           className="hidden laptop:block bg-[#b0e681] text-black font-mulish text-lg font-semibold px-8 py-2.5 rounded-full cursor-pointer hover:bg-[#9ede66] hover:scale-105 transition-all duration-300"
         >
           {/* Launch Tribe */}
-          Join Waitlist
+          Join Now
         </button>
         {/* <button
           onClick={() => window.location.href = 'https://app.astrix.live'}
