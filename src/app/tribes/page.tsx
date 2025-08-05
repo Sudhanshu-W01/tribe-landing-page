@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import Slider from "@/components/Slider";
+import VideoSection from "@/components/VideoSection";
 import VisionSection from "@/components/VisionSection";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <Header />
         <HeroSection />
         <Slider />
+        <VideoSection />
         <Community />
         <VisionSection />
         <Benefits />
