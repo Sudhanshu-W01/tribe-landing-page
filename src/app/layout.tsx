@@ -31,8 +31,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/assets/logo.png" />
-        <link rel="apple-touch-icon" href="/assets/logo.png" />
+        <link rel="icon" href="/assets/tribe-logo.png" />
+        <link rel="apple-touch-icon" href="/assets/tribe-logo.png" />
       </head>
       <body className="bg-primary flex flex-row justify-center w-[100vw] h-fit">
         {children}
