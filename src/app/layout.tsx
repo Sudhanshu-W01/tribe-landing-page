@@ -3,17 +3,17 @@ import "./globals.css";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "Tribe",
+  title: "Tribes",
   description: "Unite Your Blockchain World",
   icons: {
     icon: [
       {
-        url: "/assets/Tribes.png",
-        href: "/assets/Tribes.png",
+        url: "/assets/tribe-logo.png",
+        href: "/assets/tribe-logo.png",
       },
     ],
-    shortcut: "/assets/Tribes.png",
-    apple: "/assets/Tribes.png",
+    shortcut: "/assets/tribe-logo.png",
+    apple: "/assets/tribe-logo.png",
   },
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({
         <link rel="icon" href="/assets/tribe-logo.png" />
         <link rel="apple-touch-icon" href="/assets/tribe-logo.png" />
       </head>
-      <body className="bg-primary flex flex-row justify-center w-[100vw] h-fit">
+      <body className="bg-primary flex flex-row justify-center w-[100vw] h-fit mt-3">
         {children}
         <Toaster position="top-center" richColors />
       </body>
