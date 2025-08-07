@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/assets/logo.png",
-        href: "/assets/logo.png",
+        url: "/assets/Tribes.png",
+        href: "/assets/Tribes.png",
       },
     ],
-    shortcut: "/assets/logo.png",
-    apple: "/assets/logo.png",
+    shortcut: "/assets/Tribes.png",
+    apple: "/assets/Tribes.png",
   },
 };
 

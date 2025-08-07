@@ -56,7 +56,7 @@ const Header: React.FC = () => {
         </button>
 
         <div className="text-white font-mulish text-xl font-semibold relative z-[100]">
-          <Image src="/assets/logo.png" alt="logo" width={80} height={30} />
+          <Image src="/assets/Tribes.png" alt="logo" width={80} height={30} />
         </div>
       </div>
 
